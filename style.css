@@ -1,0 +1,625 @@
+/* Inicio de font-face */
+@font-face {
+	font-family: "FuentePrincipal";
+	src: url("Future-Friends-Italic.otf");
+  }
+
+@font-face {
+	font-family: "FuenteSecundaria";
+	src: url("RomanSerif.ttf");
+  }
+
+.PrimerTítulo {
+	font-family: "FuentePrincipal";
+   }
+
+.SegundoTítulo {
+	font-family: "FuenteSecundaria";
+}
+/* Final de font-face */
+
+
+/* Inicio del reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Final del reset */
+
+
+/* Inicio elementos de menú */
+.Enlaces {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ElementLi {
+    display: inline;
+    padding: 15px;
+}
+
+a{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	font-size: 20px;
+	position: relative;
+	bottom: 5px;
+}
+
+a:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgb(251, 255, 6);
+    /*animacion de derecha a izquierda*/
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  a:hover:after {
+    /*animacion de izquierda a derecha*/
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+/* Final elementos de menú */
+
+
+/*---------------------------------------------------*/
+/* ✅ Inicio de grid-container ✅  */
+.grid-container {
+	height: 100vh;
+	display: grid;
+	grid-template-areas: 
+	" header header header"
+	" menú menú menú"
+	" main main main"
+	" footer footer footer";
+    grid-template-rows: 80px 50px 569px 90px; 
+	grid-template-columns: 200px;
+   }
+
+header{
+    grid-area: header;
+	background-image: url("HeaderTecnoBot.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.menú{
+    grid-area: menú;
+	background-color: rgb(39, 38, 38);
+}
+
+ .main{
+	grid-area: main;
+	background-image: url("https://img.freepik.com/vector-gratis/fondo-tecnologia-cibernetica_23-2148390330.jpg?w=2000");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+ footer{
+    grid-area: footer; 
+	background-image: url("FooterTecnoBot.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+} 
+/* ✅ Final de grid-container ✅  */
+/*---------------------------------------------------*/
+
+
+/*---------------------------------------------------*/
+/* ✅ Inicio de Media query Mobile ✅  */
+@media screen and (max-width: 480px) {
+	.grid-container {
+		height: 100vh;
+		display: grid;
+		grid-template-areas: 
+		" header header header"
+		" menú menú menú"
+		" main main main"
+		" footer footer footer";
+		/* grid-template-rows: 70px 50px 455px 134px 70px; */
+		grid-template-rows: 2fr 1fr 8fr 2fr;
+	   }
+
+
+/* ⭕Inicio de Main Mobile⭕  */
+	   .main {
+		display: grid;
+		grid-template-areas: 
+		" Fila1"
+		" Fila2"
+		" Fila3";
+		/* grid-template-rows: 134px 300px 135px; */
+		/* grid-template-rows: 34px 480px 35px; */
+		grid-template-rows: 100px 300px 100px;
+		overflow-y: scroll;
+	   }
+
+	   .Fila1{
+		grid-area: Fila1;
+	   }
+
+	   .Fila2{
+		grid-area: Fila2;
+	   }
+
+	   .Fila3{
+		grid-area: Fila3;
+	   }
+/* ⭕Final de Main Mobile⭕  */
+
+
+/* 🟦Inicio de Fila2 Mobile🟦  */
+	   .Fila2 {
+		display: grid;
+		grid-template-areas: 
+		" Columna1" 
+		" Columna2";
+		grid-template-rows: 1fr 1fr;
+	   }
+
+	   .Columna1{
+		grid-area: Columna1;
+	   }
+
+	   .Columna2{
+		grid-area: Columna2;
+	   }
+/* 🟦Final de Fila2 Mobile🟦  */
+
+
+/* 💬Inicio de texto Mobile💬  */
+	   .PrimerTítulo{
+		font-size: 30px;
+	   }
+
+	   .SegundoTítulo{
+		font-size: 20px;
+	   }
+
+	   .Texto{
+		margin-left: 12px;
+		margin-top: 10px;
+	   }
+/* 💬Final de texto Mobile💬  */
+
+
+/* 🔘Inicio de Botón Mobile🔘  */
+	   .Button{
+		width: 200px;
+		height: 60px;
+		border-radius: 50px;
+		margin-top: 10px;
+		margin-left: 140px;
+		background-color: rgb(19, 207, 19);
+		transition: all 2s;
+	   }
+
+	   .TextButton{
+        font-size: 20px;
+		color: white;
+		transition: all 2s;
+	   }
+
+	   .Button:hover{
+		width: 200px;
+		height: 60px;
+		border-radius: 50px;
+		margin-top: 10px;
+		margin-left: 140px;
+		background-color: rgb(255, 230, 6);
+	   }
+
+	   .TextButton:hover{
+        font-size: 20px;
+		color: rgb(0, 0, 0);
+	   }
+/* 🔘Final de Botón Mobile🔘  */
+
+
+/* 🟧Inicio de Elemento cuadro Mobile🟧  */
+	   .cuadro{
+		width: 350px;
+		height: 350px;
+		margin-left: 130px;
+		margin-bottom: 20px;
+
+		background-image: url("LaptopVector.png");
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	   } 
+
+	   .MoverCuadro:hover {
+		animation: Mover 1s; 
+        animation-iteration-count: infinite; 
+	   }
+
+	   @keyframes Mover { 
+
+		0% {
+			transform: translateY(-4px);
+		}
+
+	    10% {
+			transform: translateY(-8px);
+		}
+
+	    20% {
+			transform: translateY(-12px);
+		}
+
+		40% {
+			transform: translateY(-16px);
+		} 
+
+		   
+
+		50% {
+			transform: translateY(-12px);
+		}
+
+	    60% {
+			transform: translateY(-8px);
+		}
+
+		70% {
+			transform: translateY(-4px);
+		} 
+
+		80% {
+			transform: translateY(4px);
+		} 
+	} 
+/* 🟧Final de Elemento cuadro Mobile🟧  */
+} 
+/* ✅ Final de Media query Mobile✅  */
+/*---------------------------------------------------*/
+
+
+/*---------------------------------------------------*/
+/* ✅ Inicio de Media query Tablet Vertical (Lo mismo que Mobile) ✅  */
+@media screen and (max-width: 768px) {
+	.grid-container {
+		height: 100vh;
+		display: grid;
+		grid-template-areas: 
+		" header header header"
+		" menú menú menú"
+		" main main main"
+		" footer footer footer";
+		/* grid-template-rows: 70px 50px 455px 134px 70px; */
+		grid-template-rows: 2fr 1fr 8fr 2fr;
+	   }
+
+/* ⭕Inicio de Main Tablet⭕  */
+	   .main {
+		display: grid;
+		grid-template-areas: 
+		" Fila1"
+		" Fila2"
+		" Fila3";
+		/* grid-template-rows: 134px 300px 135px; */
+		/* grid-template-rows: 34px 480px 35px; */
+		grid-template-rows: 1fr 20fr 1fr;
+		overflow-y: scroll;
+	   }
+
+	   .Fila1{
+		grid-area: Fila1;
+	   }
+
+	   .Fila2{
+		grid-area: Fila2;
+	   }
+
+	   .Fila3{
+		grid-area: Fila3;
+	   }
+/* ⭕Final de Main Tablet⭕  */
+
+
+/* 🟦Inicio de Fila2 Tablet🟦  */
+	   .Fila2 {
+		display: grid;
+		grid-template-areas: 
+		" Columna1" 
+		" Columna2";
+		grid-template-rows: 1fr 1fr;
+	   }
+
+	   .Columna1{
+		grid-area: Columna1;
+	   }
+
+	   .Columna2{
+		grid-area: Columna2;
+	   }
+/* 🟦Final de Fila2 Tablet🟦  */
+
+
+/* 💬Inicio de texto Tablet💬  */
+	   .PrimerTítulo{
+		font-size: 30px;
+	   }
+
+	   .SegundoTítulo{
+		font-size: 20px;
+	   }
+
+	   .Texto{
+		margin-left: 8px;
+		margin-top: 10px;
+	   }
+/* 💬Final de texto Tablet💬  */
+
+
+/* 🔘Inicio de Botón Tablet🔘  */
+	   .Button{
+		width: 200px;
+		height: 60px;
+		border-radius: 50px;
+		margin-top: 10px;
+		margin-left: 140px;
+		background-color: rgb(19, 207, 19);
+		transition: all 2s;
+	   }
+
+	   .TextButton{
+        font-size: 20px;
+		color: white;
+		transition: all 2s;
+	   }
+
+	   .Button:hover{
+		width: 200px;
+		height: 60px;
+		border-radius: 50px;
+		margin-top: 10px;
+		margin-left: 140px;
+		background-color: rgb(255, 230, 6);
+	   }
+
+	   .TextButton:hover{
+        font-size: 20px;
+		color: rgb(0, 0, 0);
+	   }
+/* 🔘Final de Botón Tablet🔘  */
+
+
+/* 🟧Inicio de Elemento cuadro Tablet🟧  */
+	   .cuadro{
+		width: 200px;
+		height: 200px;
+		margin-left: 140px;
+		margin-top: 20px;
+
+		background-image: url("LaptopVector.png");
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	   } 
+
+	   .MoverCuadro:hover {
+		animation: Mover 1s; 
+        animation-iteration-count: infinite; 
+	   }
+
+	   @keyframes Mover { 
+
+		0% {
+			transform: translateY(-4px);
+		}
+
+	    10% {
+			transform: translateY(-8px);
+		}
+
+	    20% {
+			transform: translateY(-12px);
+		}
+
+		40% {
+			transform: translateY(-16px);
+		} 
+
+		   
+
+		50% {
+			transform: translateY(-12px);
+		}
+
+	    60% {
+			transform: translateY(-8px);
+		}
+
+		70% {
+			transform: translateY(-4px);
+		} 
+
+		80% {
+			transform: translateY(4px);
+		} 
+	} 
+/* 🟧Final de Elemento cuadro Tablet🟧  */
+} 
+/* ✅ Final de Media query Tablet Vertical (Lo mismo que Mobile) ✅  */
+/*---------------------------------------------------*/
+
+
+/*---------------------------------------------------*/
+/* ✅ Inicio de Media query PC✅  */
+@media screen and (min-width: 1200px) {
+	.grid-container {
+		height: 100vh;
+		display: grid;
+		grid-template-areas: 
+		" header header header"
+		" menú menú menú"
+		" main main main"
+		" footer footer footer";
+	    grid-template-rows: 80px 50px 569px 90px; 
+		grid-template-columns: 200px;
+	   }
+
+
+/* ⭕Inicio de Main PC⭕  */
+	  .main {
+		display: grid;
+		grid-template-areas: 
+		" Fila1"
+		" Fila2"
+		" Fila3";
+		/* grid-template-rows: 134px 300px 135px; */
+		grid-template-rows: 54px 460px 55px;
+	   }
+
+	   .Fila1{
+		grid-area: Fila1;
+	   }
+
+	   .Fila2{
+		grid-area: Fila2;
+	   }
+
+	   .Fila3{
+		grid-area: Fila3;
+	   }
+/* ⭕Final de Main PC⭕  */
+
+
+/* 🟦Inicio de Fila2 PC🟦  */
+	   .Fila2 {
+		display: grid;
+		grid-template-areas: 
+		" Columna1 Columna2";
+		grid-template-columns: 1fr 1fr;
+	   }
+
+	   .Columna1{
+		grid-area: Columna1;
+	   }
+
+	   .Columna2{
+		grid-area: Columna2;
+	   }
+/* 🟦Final de Fila2 PC🟦  */
+
+
+/* 💬Inicio de texto PC💬  */
+       .PrimerTítulo{
+		font-size: 30px;
+	   }
+
+	   .SegundoTítulo{
+		font-size: 25px;
+	   }
+
+	   .Texto{
+		margin-left: 8px;
+		margin-top: 50px;
+	   }
+/* 💬Final de texto PC💬  */
+
+
+/* 🔘Inicio de Botón PC🔘  */
+	   .Button{
+		width: 200px;
+		height: 60px;
+		border-radius: 50px;
+		margin-top: 120px;
+		margin-left: 150px;
+		background-color: rgb(19, 207, 19);
+		transition: all 2s;
+	   }
+
+	   .TextButton{
+        font-size: 20px;
+		color: white;
+		transition: all 2s;
+	   }
+
+	 .Button:hover {
+		width: 200px;
+		height: 60px;
+		border-radius: 50px;
+		margin-top: 120px;
+		margin-left: 280px;
+		background-color: rgb(255, 230, 6);
+	   }
+
+	   .TextButton:hover {
+        font-size: 20px;
+		color: rgb(0, 0, 0);
+	   } 
+/* 🔘Final de Botón PC🔘  */
+
+
+/* 🟧Inicio de Elemento cuadro PC🟧  */
+	   .cuadro{
+		width: 250px;
+		height: 250px;
+		transform: translate(305px);
+		margin-top: 60px;
+
+		background-image: url("LaptopVector.png");
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	   }
+
+	   .MoverCuadro:hover {
+		animation: Mover 1s; 
+        animation-iteration-count: infinite; 
+	   }
+
+	   @keyframes Mover { 
+
+		0% {
+			transform: translateY(-4px);
+		}
+
+	    10% {
+			transform: translateY(-8px);
+		}
+
+	    20% {
+			transform: translateY(-12px);
+		}
+
+		40% {
+			transform: translateY(-16px);
+		} 
+
+		   
+
+		50% {
+			transform: translateY(-12px);
+		}
+
+	    60% {
+			transform: translateY(-8px);
+		}
+
+		70% {
+			transform: translateY(-4px);
+		} 
+
+		80% {
+			transform: translateY(4px);
+		} 
+	} 
+/* 🟧Final de Elemento cuadro PC🟧  */
+}
+/* ✅ Final de Media query PC ✅  */
+/*---------------------------------------------------*/
+
